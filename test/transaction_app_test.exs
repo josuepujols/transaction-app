@@ -57,8 +57,6 @@ defmodule TransactionAppTest do
     # Make a transaction
     TransactionApp.make_transaction(account_1.account_id, account_2.account_id, 200)
 
-    new_balance = AccountAgent.get_balance(agent, account_1.account_id)
-
     # Get the transactions
     transactions = TransactionApp.get_transactions()
     assert length(transactions) == 1
